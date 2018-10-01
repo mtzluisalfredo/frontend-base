@@ -1,0 +1,42 @@
+@mixin alert-variant($color) {
+  $background-color: rgba($color, .3);
+
+  border-color: $color;
+  background-color: $background-color;
+  color: $color;
+}
+
+.alert-message {
+  display: inline-block;
+  margin-bottom: 1em;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 10px 30px;
+  width: 100%;
+  max-width: 600px;
+  min-height: 60px;
+  text-align: center;
+  font-weight: $font-weight-medium;
+
+  a {
+    text-decoration: underline;
+    color: $white;
+  }
+
+  &.primary {
+    @include alert-variant($primary-color);
+  }
+
+  &.info {
+    @include alert-variant($info-color);
+  }
+
+  &.success {
+    @include alert-variant($success-color);
+  }
+
+  &.error {
+    @include alert-variant($error-color-light);
+    text-align: left;
+  }
+}

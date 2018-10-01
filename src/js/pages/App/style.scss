@@ -1,0 +1,59 @@
+.app-container {
+  background-color: $body-bg;
+  width: 100%;
+  height: 100%;
+
+  :global(.container) {
+    max-width: 100%;
+  }
+
+  .main-container {
+    position: absolute;
+    top: $app-header-height;
+    bottom: 0;
+    width: 100%;
+
+    .content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: $nav-width-lg;
+      transition: left .2s ease;
+
+      &.expanded {
+        left: $nav-width-sm;
+      }
+
+      &.full {
+        left: 0;
+      }
+
+      :global(.has-modal) {
+        > div {
+          overflow: visible !important;
+        }
+      }
+    }
+
+    .content-inner {
+      margin: auto;
+      padding: 34px 25px;
+      max-width: 1220px;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .app-container {
+    .main-container {
+      .content {
+        left: $nav-width-sm;
+      }
+    }
+
+    .hidden-sm {
+      display: none;
+    }
+  }
+}

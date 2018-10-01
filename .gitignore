@@ -1,0 +1,16 @@
+.git
+node_modules
+public/css
+public/js
+public/images
+public/fonts
+webpack-assets.json
+webpack-stats.json
+.DS_Store
+*.map
+*.log*
+test_failure_screenshots
+test_logs
+icon-stats.json
+.vscode
+styleguide/

@@ -1,0 +1,177 @@
+figure {
+  &.avatar {
+    display: inline-block;
+    margin: 0;
+    border: 0;
+    background-color: $white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: $white;
+
+    img {
+      max-width: 100%;
+      height: 100%;
+    }
+
+    span {
+      display: inline-block;
+      margin: auto;
+      width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &.shadow {
+      box-shadow: 0 2px 9px 0 $shadow;
+    }
+
+    &.circle {
+      border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    &.square {
+      border-radius: 10px;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+
+    &.photo {
+      border-radius: 50%;
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        opacity: 0.15;
+        border-radius: 50%;
+        background-color: $primary-color;
+        width: 120%;
+        height: 120%;
+        content: '';
+      }
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    &.normal {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 12px;
+    }
+
+    &.medium {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      font-size: 14px;
+    }
+
+    &.big {
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+      font-size: 16px;
+    }
+
+    &.gigant {
+      width: 120px;
+      height: 120px;
+      line-height: 120px;
+      font-size: 16px;
+    }
+  }
+
+  &.empty-state {
+    display: inline-block;
+    margin: 0;
+    border: 1px solid $primary-color;
+    background-color: $white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: $white;
+
+    &.shadow {
+      box-shadow: 0 2px 9px 0 $shadow;
+    }
+
+    &.circle {
+      border-radius: 50%;
+    }
+
+    &.square {
+      border-radius: 10px;
+    }
+
+    &.normal {
+      width: 40px;
+      height: 40px;
+      line-height: 42.5px;
+      font-size: 12px;
+
+      img {
+        padding-left: 1px;
+      }
+    }
+
+    &.medium {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      font-size: 14px;
+    }
+
+    &.big {
+      width: 90px;
+      height: 90px;
+      line-height: 110px;
+      font-size: 6px;
+    }
+
+    &.gigant {
+      width: 120px;
+      height: 120px;
+      line-height: 120px;
+      font-size: 16px;
+    }
+
+    &.photo {
+      border-radius: 50%;
+      border: none;
+      background-color: lighten($base-gray, 46%);
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        opacity: 0.15;
+        border-radius: 50%;
+        background-color: $primary-color;
+        width: 120%;
+        height: 120%;
+        content: '';
+      }
+    }
+  }
+}
+
+.default-icon {
+  color: $primary-color;
+}

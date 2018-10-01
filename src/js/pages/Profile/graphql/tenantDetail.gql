@@ -1,0 +1,9 @@
+query tenantDetail($input: TenantId!) {
+  tenant(input: $input) {
+    id
+    company_name
+    location
+    company_phone
+    logo
+  }
+}

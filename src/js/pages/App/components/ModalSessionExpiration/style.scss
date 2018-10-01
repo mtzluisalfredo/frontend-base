@@ -1,0 +1,21 @@
+.modal-session-expiration {
+  z-index: 999;
+  text-align: center;
+
+  .modal-session-body {
+    padding: 0 10px 20px;
+  }
+
+  .expiration-date {
+    margin: 1em 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  footer {
+    button {
+      margin: 0;
+      min-width: 170px;
+    }
+  }
+}

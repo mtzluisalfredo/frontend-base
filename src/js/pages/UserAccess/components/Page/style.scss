@@ -1,0 +1,46 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $body-bg;
+  background-repeat: no-repeat;
+  background-size: 50% 100%;
+  min-height: 100%;
+  font-family: $font-family;
+
+  .page-header {
+    position: absolute;
+    top: 0;
+    background-color: $white;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .page-body {
+    margin-bottom: 40px;
+    padding: 160px 0 50px;
+    width: 100%;
+  }
+
+  .form {
+    margin: auto;
+    max-width: 350px;
+    min-height: 450px;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  form {
+    margin: 30px auto;
+
+    button {
+      &[type='submit'] {
+        display: block;
+        margin: 30px auto;
+        min-width: 270px;
+      }
+    }
+  }
+}

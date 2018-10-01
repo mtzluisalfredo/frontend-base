@@ -1,0 +1,12 @@
+.page-size-dropdown {
+  float: left;
+  width: 180px;
+  height: 45px;
+
+  .dropdown {
+    button {
+      border: 1px solid $dark-gray;
+      background-color: $white;
+    }
+  }
+}

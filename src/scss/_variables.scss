@@ -1,0 +1,117 @@
+@import '~susy/sass/susy';
+$columns: 12;
+$susy: (
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: 1200px,
+  columns: $columns,
+  gutters: .45,
+  global-box-sizing: border-box,
+);
+
+$body-bg:                #f5f5f5;
+
+$primary-color:          #643a87;
+$primary-color-alt:      #ab8fcc;
+$primary-color-hover:    #0d6c94;
+$info-color:             #06b4fe;
+$info-color-alt:         #00cbda;
+$success-color-light:    #44c95b;
+$success-color:          #58b560;
+$success-color-dark:     #31953a;
+$error-color:            #d72b3f;
+$error-color-light:      #de4962;
+$warning-color:          #e68127;
+$warning-color-alt:      #ffad2b;
+
+$purpley-color:          #7a69e6;
+$aqua-color:             #17ebd9;
+$gold-color:             #ffcf56;
+$salmon-color:           #f95e5e;
+
+$white:                  #fff;
+$light-gray:             #f2f6fa;
+$lighter-gray:           #f6f6f7;
+$lightest-gray:          #f9f9fb;
+$base-gray:              #58595b;
+$dark-gray:              #d4d4d6;
+$darker-gray:            #676c67;
+$black:                  #282c36;
+$black-gray:             #3b3f3b;
+$black-gray-light:       #9b9b9b;
+
+$ui-border:              $base-gray;
+$ui-light-border:        #eaeaea;
+$shadow:                 rgba(0, 0, 0, .1);
+$shadow-light:           rgba(0, 0, 0, .05);
+
+$font-family:            'Work Sans', sans-serif;
+$font-size-large:        18px;
+$font-size:              16px;
+$font-size-small:        14px;
+$font-size-tiny:         12px;
+$text-color:             $black-gray;
+$text-color-light:       $black-gray-light;
+$success-text-color:     $success-color;
+$error-text-color:       $error-color-light;
+$font-weight-light:      300;
+$font-weight-normal:     400;
+$font-weight-medium:     500;
+$font-weight-semibold:   600;
+$font-weight-bold:       700;
+
+$title-color:            $darker-gray;
+$title-color-alt:        $primary-color;
+$title-font-family:      $font-family;
+$title-font-weight:      300;
+$title-font-size:        28px;
+
+$input-label-color:      rgba($black-gray, 0.75);
+$input-label-size:       $font-size-small;
+$input-label-weight:     $font-weight-medium;
+$input-addon-color:      rgba($black-gray-light, 1);
+$input-addon-size:       $font-size;
+$input-border-color:     $dark-gray;
+$input-border-focus:     $primary-color;
+$input-error-color:      $error-color;
+$input-bg-color:         $white;
+$input-font-size:        $font-size;
+$input-text-color:       $text-color;
+$input-placeholder:      $black-gray-light;
+
+$radio-color:            $dark-gray;
+$radio-active-color:     $primary-color;
+
+$button-font-size:       14px;
+$button-border-radius:   2px;
+$button-height:          50px;
+$border-button-unstyled: #9b9b9b;
+
+$select-font-size:       14px;
+$select-border-radius:   5px;
+$select-height:          45px;
+$select-width:           180px;
+
+$checkbox-border-color:  $darker-gray;
+$checkbox-active-color:  $primary-color;
+
+$switch-bg-color:        $base-gray;
+$switch-button-color:    $dark-gray;
+$switch-active-color:    $info-color;
+$switch-button-size:     20px;
+
+$screen-xs:              480px;
+$screen-sm:              768px;
+$screen-lg:              1024px;
+$screen-xl:              1280px;
+
+$transition-speed:       .2s;
+$z-index-dropdown:       999;
+
+$app-header-height:      90px;
+$nav-width-lg:           205px;
+$nav-width-sm:           80px;
+
+$header-z-index:         9;
+$nav-z-index:            8;

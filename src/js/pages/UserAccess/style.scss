@@ -1,0 +1,159 @@
+$color: rgba($black-gray, 0.75);
+
+.form {
+  background-color: $white;
+  padding: 30px;
+}
+
+.login-page {
+  .sign-up-text {
+    margin: 80px 0 20px;
+    color: $darker-gray;
+    font-weight: 300;
+  }
+
+  .sign-up-bttn {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        margin-right: 10px;
+        padding: 0;
+      }
+    }
+  }
+
+  h1 {
+    width: 100%;
+    max-width: 370px;
+    text-align: left;
+  }
+}
+
+.recover-password-page {
+  text-align: center;
+
+  h1,
+  p {
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    max-width: 370px;
+    text-align: left;
+  }
+
+  p {
+    margin-top: 20px;
+
+    span {
+      max-width: 100%;
+    }
+  }
+
+  .success-message {
+    margin: 0;
+  }
+}
+
+.reset-password-page,
+.validate-account-page {
+  .alignment {
+    text-align: left;
+  }
+
+  .new-password-icon {
+    height: 112px;
+    width: 114px;
+    color: $primary-color;
+    margin-left: 10%;
+  }
+
+  .success-message {
+    margin-left: 10%;
+    span {
+      padding: 0;
+      font-size: 28px;
+      text-align: left;
+      color: $primary-color;
+      min-width: 470px;
+    }
+  }
+
+  .success-bttn {
+    text-align: left;
+    margin-left: 10%;
+  }
+}
+
+.sign-up-page {
+  .success-container {
+    text-align: center;
+
+    .title {
+      margin-top: 24px;
+      font-weight: 400;
+    }
+
+    .button {
+      width: 270px;
+
+      span {
+        color: $white;
+        font-family: 'Work Sans';
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.password {
+  padding-bottom: 10px;
+  color: $color;
+  font-size: $font-size-small;
+}
+
+.forgot-password {
+  display: inline;
+  position: absolute;
+  right: 0;
+  font-size: $font-size-small;
+
+  a {
+    color: $color;
+  }
+}
+
+.link {
+  text-align: center;
+  font-size: 14px;
+
+  span {
+    color: $primary-color;
+  }
+
+  .privacy {
+    padding-top: 30px;
+    text-align: center;
+  }
+}
+
+.privacy {
+  padding-top: 10px;
+  text-align: justify;
+  font-size: 14px;
+
+  span {
+    color: $primary-color;
+  }
+}
+
+.error-msg-tk,
+.input-success-message-reset {
+  margin-top: 0;
+}
+
+.button-login-text {
+  color: $white;
+}

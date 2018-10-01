@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  chrome:
+    command: google-chrome http://web-app:9505/browser/connect
+  web-app:
+    container_name: contpaqisi_web_app_test
+    environment:
+      NODE_ENV: test
+      API_HOST: http://api:3000/
+      API_HOST_NAME: api
+      API_HOST_PORT: 3000
+      FRONT_HOST: http://web-app:4000/
+      FRONT_HOST_NAME: web-app
+      FRONT_HOST_PORT: 4000
+    command: "sleep infinity"
+    entrypoint: /home/docker/startup.test.sh

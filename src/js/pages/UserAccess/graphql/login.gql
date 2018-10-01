@@ -1,0 +1,12 @@
+mutation login ($input: AUTH_PROVIDER_EMAIL) {
+  session: signinUser(email: $input) {
+    user {
+      avatar
+      firstName
+      lastName
+      email
+      role
+    }
+    token
+  }
+}

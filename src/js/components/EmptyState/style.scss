@@ -1,0 +1,43 @@
+.empty-state {
+  text-align: center;
+
+  h1 {
+    color: $title-color-alt;
+    font-size: 22px;
+    font-weight: $title-font-weight;
+  }
+
+  .content {
+    margin: 40px auto 0;
+    box-shadow: 0 2px 9px 0 $shadow-light;
+    background-color: $white;
+    padding: 60px;
+    width: 470px;
+
+    > img {
+      margin-bottom: 20px;
+    }
+  }
+
+  .description {
+    color: $title-color;
+  }
+
+  button {
+    margin-top: 2em;
+    padding: 0;
+    width: 250px;
+
+    i {
+      display: inline-block;
+      height: 15px;
+      vertical-align: middle;
+      font-size: 20px;
+
+      &::before {
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+}

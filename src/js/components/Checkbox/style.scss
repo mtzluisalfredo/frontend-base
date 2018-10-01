@@ -1,0 +1,83 @@
+.checkbox {
+  input {
+    opacity: 0;
+  }
+
+  span {
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .checkbox-button {
+    display: inline-block;
+    position: relative;
+    transition: border-color .2s ease;
+    opacity: .6;
+    margin: 0 11px;
+    border: 2px solid $checkbox-border-color;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      transform: scale(0);
+      transition: opacity .2s ease, transform .3s ease, border-radius .3s ease;
+      opacity: 0;
+      border-radius: 20px;
+      background-color: $checkbox-active-color;
+      background-image: url('./assets/checkbox-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      content: '';
+    }
+
+    &:hover {
+      opacity: 1;
+      border-color: $checkbox-active-color;
+    }
+  }
+
+  &.active {
+    .checkbox-button {
+      opacity: 1;
+      border-color: $checkbox-active-color;
+
+      &::before {
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &.focus {
+    .checkbox-button {
+      border-color: rgba($checkbox-active-color, 0.7);
+      box-shadow: 0 0 4px 2px rgba($checkbox-active-color, 0.5);
+    }
+  }
+
+  &.disabled {
+    .radio-button {
+      opacity: .6;
+      cursor: not-allowed;
+
+      &:hover {
+        border-color: $checkbox-border-color;
+      }
+
+      &.active {
+        border-color: $checkbox-active-color;
+      }
+    }
+  }
+}

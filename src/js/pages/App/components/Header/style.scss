@@ -1,0 +1,101 @@
+.app-header {
+  $top-margin: 24px;
+  $side-margin: 24px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 2px 9px 0 $shadow-light;
+  background-color: $white;
+  height: $app-header-height;
+
+  :global(.container) {
+    position: relative;
+    margin-left: 0;
+    width: 110%;
+    max-width: 100%;
+    height: $app-header-height;
+
+    > div {
+      height: $app-header-height;
+    }
+  }
+
+  .logo-container {
+    display: inline-block;
+    transition: width .2s ease;
+    padding: $top-margin $side-margin 0;
+    vertical-align: top;
+
+    .logo-lg {
+      display: inline-block;
+    }
+
+    .logo-sm {
+      display: none;
+    }
+
+    &.expanded {
+      width: $nav-width-lg;
+    }
+
+    &.collapsed {
+      padding-left: 15px;
+      width: $nav-width-sm;
+
+      .logo-lg {
+        display: none;
+      }
+
+      .logo-sm {
+        display: inline-block;
+      }
+    }
+  }
+
+  .logo-container-collapsed {
+    display: inline-block;
+    transition: width .2s ease;
+    padding: $top-margin $side-margin 0;
+    vertical-align: top;
+  }
+
+  .separator {
+    display: inline-block;
+    background-color: $ui-light-border;
+    width: 1px;
+    height: 100%;
+  }
+
+  .right-menu {
+    position: absolute;
+    top: 0;
+    right: $side-margin;
+    bottom: 0;
+    list-style: none;
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .app-header {
+    .logo-container {
+      &.expanded {
+        width: $nav-width-sm;
+      }
+
+      .logo-lg {
+        display: none;
+      }
+
+      .logo-sm {
+        display: inline-block;
+      }
+    }
+  }
+}

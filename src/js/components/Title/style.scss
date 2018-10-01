@@ -1,0 +1,67 @@
+h1.title {
+  font-size: 28px;
+}
+
+h2.title {
+  font-size: 26px;
+}
+
+h3.title {
+  font-size: 24px;
+}
+
+h4.title {
+  font-size: 22px;
+}
+
+h5.title {
+  font-size: 20px;
+}
+
+h6.title {
+  font-size: 18px;
+}
+
+.title {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-family: $title-font-family;
+  font-weight: $title-font-weight;
+
+  &.default {
+    color: $black-gray;
+  }
+
+  &.primary {
+    color: $primary-color;
+  }
+
+  &.border {
+    &::after {
+      display: block;
+      margin: 10px 0 0 2px;
+      background-color: $black-gray;
+      width: 70px;
+      height: 4px;
+      content: '';
+    }
+
+    .title-text {
+      display: inline-block;
+    }
+
+    &.primary {
+      &::after {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  .title-icon {
+    display: inline-block;
+    margin-right: 22px;
+    max-width: 37px;
+    vertical-align: middle;
+  }
+}

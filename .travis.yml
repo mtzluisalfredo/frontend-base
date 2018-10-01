@@ -1,0 +1,19 @@
+services:
+  - docker
+
+install:
+  - curl -#L https://get.torus.sh/${TORUS_VER}/torus_${TORUS_VER}_linux_amd64.zip >> torus.zip
+  - unzip -q torus.zip
+  - rm torus.zip
+  - mv torus scripts/
+
+before_script:
+  - chmod +x ./scripts/*.sh
+  - chmod +x ./scripts/travis/*.sh
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+  - ./scripts/torus run -e travis -s travis -- ./scripts/docker-login.sh
+  - ./scripts/torus run -e travis -s travis -- ./scripts/start-api.sh
+
+script:
+  - ./scripts/torus run -e travis -s travis -- ./scripts/travis/main.sh

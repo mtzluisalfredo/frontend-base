@@ -1,0 +1,7 @@
+.file-selector {
+  input {
+    &[type='file'] {
+      display: none;
+    }
+  }
+}

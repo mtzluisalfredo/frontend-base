@@ -1,0 +1,17 @@
+{
+  "env": {
+    "mocha": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "testcafe"
+  ],
+  "extends": "plugin:testcafe/recommended",
+  "rules": {
+    "newline-per-chained-call": [0, { "ignoreChainWithDepth": 3 }]
+  }
+}

@@ -1,0 +1,39 @@
+.page-selector {
+  display: inline-block;
+  padding: .5em 0 0;
+
+  button {
+    margin: 0 5px 0 0;
+    border: 0;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 0;
+    width: 32px;
+    min-width: auto;
+    height: 32px;
+    text-transform: none;
+    line-height: 1em;
+    color: $text-color-light;
+
+    &.active {
+      background-color: $primary-color;
+      cursor: default;
+      color: $white;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
+  .btn-prev,
+  .btn-next {
+    img {
+      vertical-align: sub;
+    }
+  }
+}

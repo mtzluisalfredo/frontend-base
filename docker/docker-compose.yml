@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  chrome:
+    image: martinsthiago/chrome:64.0.3282.186
+    command: "sleep infinity"
+    volumes:
+      - ../chrome/:/data
+    networks:
+      - contpaqisi_agavelab
+  web-app:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    image: contpaqisi/web-app
+    container_name: contpaqisi_web_app
+    environment:
+      NODE_ENV: "${NODE_ENV}"
+      API_HOST: "${API_HOST}"
+      API_HOST_NAME: "${API_HOST_NAME}"
+      API_HOST_PORT: "${API_HOST_PORT}"
+    expose:
+      - "4000"
+    ports:
+      - "4000:4000"
+    labels:
+      container_group: service
+    networks:
+      - contpaqisi_agavelab
+networks:
+  contpaqisi_agavelab:
+    external: true

@@ -1,0 +1,10 @@
+.datepicker {
+  @import './datepicker_overrides';
+  margin-bottom: 21px;
+
+  .input {
+    > div {
+      margin: 0;
+    }
+  }
+}

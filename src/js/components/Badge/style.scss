@@ -1,0 +1,37 @@
+.badge-value {
+  position: absolute;
+  top: 0;
+  right: -15px;
+  bottom: 0;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 $shadow;
+  background-color: inherit;
+  cursor: default;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 38px;
+  color: $white;
+  font-size: 16px;
+}
+
+.badge-default {
+  background-color: $black-gray-light;
+}
+
+.badge-primary {
+  background-color: $primary-color;
+}
+
+.badge-info {
+  background-color: $info-color;
+}
+
+.badge-success {
+  background-color: $success-color;
+}
+
+.badge-error {
+  background-color: $error-color;
+}

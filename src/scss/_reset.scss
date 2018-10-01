@@ -1,0 +1,12 @@
+@import '../../node_modules/normalize-scss/sass/normalize/import-now';
+
+* {
+  position: relative;
+  box-sizing: border-box;
+
+  html {
+    .clearfix {
+      min-height: 1%;
+    }
+  }
+}

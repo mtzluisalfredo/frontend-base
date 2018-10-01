@@ -1,0 +1,9 @@
+mutation createUser($firstName: String!, $lastName: String!, $role: String!, $access: AuthProviderSignupData!) {
+  user: createUser(firstName: $firstName, lastName: $lastName, role: $role, authProvider: $access) {
+    avatar
+    firstName
+    lastName
+    email
+    role
+  }
+}

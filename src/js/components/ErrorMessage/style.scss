@@ -1,0 +1,57 @@
+.error-message {
+  display: block;
+  margin: 13px auto;
+  color: $error-color;
+
+  a {
+    text-decoration: underline;
+  }
+
+  .message {
+    display: inline-block;
+  }
+
+  &.alert {
+    padding: 20px 80px;
+    text-align: left;
+
+    .message {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .error-icon {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    margin: 0;
+    border-radius: 50%;
+    background-color: $white;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+
+    img {
+      margin-top: 7px;
+    }
+  }
+
+  .close {
+    display: inline-block;
+    position: absolute;
+    top: 14px;
+    right: 25px;
+
+    button {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+    }
+  }
+}

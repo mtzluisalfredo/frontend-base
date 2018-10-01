@@ -1,0 +1,42 @@
+.picker_center {
+  background-color: #3f80be;
+}
+
+.picker_pointer {
+  background-color: #3f80be;
+
+  .pointer_drag {
+    background-color: #3f80be;
+  }
+}
+
+.preview_container {
+  padding-left: 0;
+  left: 35%;
+}
+
+.preview_container.without_icon {
+  padding-right: 0;
+}
+
+.time_picker_modal_header {
+  background-color: #3f80be;
+}
+
+.time_picker_modal_container {
+  transform: scale(0.8);
+  top: -20px;
+  left: -30px;
+}
+
+.time_picker_preview {
+  color: #3b3f3b;
+  height: 45px;
+  box-shadow: none;
+  border: 1px solid #d4d4d6;
+  margin-top: 7px;
+}
+
+.time_picker_preview:hover {
+  box-shadow: none;
+}

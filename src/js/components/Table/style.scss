@@ -1,0 +1,139 @@
+.table {
+  margin: 20px 0 0;
+  border-top: 1px solid $ui-light-border;
+  width: 100%;
+
+  &.hover {
+    tbody {
+      tr {
+        cursor: pointer;
+
+        &:hover {
+          z-index: 1;
+          box-shadow: 0 0 8px 3px $shadow;
+        }
+      }
+    }
+  }
+}
+
+.table-row {
+  display: flex;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.05);
+  padding: 0;
+  width: 100%;
+
+  td {
+    display: flex;
+    padding: 30px 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: 45px;
+    }
+
+    &:last-child {
+      padding-right: 45px;
+    }
+
+    > div {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &.empty {
+      width: 80px;
+    }
+  }
+}
+
+.table-header,
+.table-footer {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  width: 100%;
+  text-align: left;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: $font-weight-semibold;
+
+  tr {
+    border: 0;
+    width: 100%;
+  }
+
+  td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+  }
+}
+
+.table-body {
+  display: block;
+
+  tr {
+    transition: box-shadow 0.3s ease, background-color 0.4s ease;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    background-color: $white;
+    min-height: 78px;
+  }
+
+  td {
+    align-items: center;
+    min-height: 78px;
+    color: $darker-gray;
+  }
+}
+
+.custom-table-header {
+  margin-top: 0px;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafbfc;
+
+  button {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    max-width: calc(100% - 10px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $darker-gray;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .arrows {
+    cursor: pointer;
+
+    .sorted-arrow,
+    .unsorted-arrow {
+      margin-left: 2px;
+    }
+
+    .sorted-arrow {
+      vertical-align: top;
+    }
+
+    .unsorted-arrow {
+      vertical-align: text-top;
+    }
+  }
+
+  .sorted {
+    color: $primary-color;
+  }
+
+  .unsortable {
+    cursor: default;
+  }
+}

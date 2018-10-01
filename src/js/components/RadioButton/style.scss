@@ -1,0 +1,108 @@
+.radio {
+  & + & {
+    margin-top: 1em;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input {
+    opacity: 0;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+
+  &.active {
+    > label {
+      > span {
+        color: $radio-active-color;
+      }
+    }
+  }
+
+  &.focus {
+    .radio-button {
+      border-color: rgba($radio-active-color, 0.7);
+      box-shadow: 0 0 4px 2px rgba($radio-active-color, 0.5);
+    }
+  }
+
+  .radio-button {
+    display: inline-block;
+    position: relative;
+    transition: border-color 0.2s ease;
+    margin: 0 10px 0 0;
+    border: 2px solid $radio-color;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      transform: scale(0);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      opacity: 0;
+      border-radius: 50%;
+      background-color: $radio-active-color;
+      width: 12px;
+      height: 12px;
+      color: $radio-active-color;
+      content: '';
+    }
+
+    &:hover,
+    &.active {
+      border-color: $radio-active-color;
+    }
+
+    &.active {
+      &::before {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  &.big {
+    .radio-button {
+      width: 30px;
+      height: 30px;
+
+      &::before {
+        top: 3px;
+        right: 3px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &.disabled {
+    opacity: 0.6;
+
+    label {
+      cursor: not-allowed;
+    }
+
+    .radio-button {
+      cursor: not-allowed;
+
+      &:hover {
+        border-color: $radio-color;
+      }
+
+      &.active {
+        border-color: $radio-active-color;
+      }
+    }
+  }
+}

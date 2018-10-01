@@ -1,0 +1,124 @@
+.input-container {
+  display: block;
+
+  label {
+    display: block;
+    padding-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $input-label-color;
+    font-size: $input-label-size;
+    font-weight: $input-label-weight;
+  }
+
+  &.disabled {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+}
+
+.input-group {
+  display: block;
+  position: relative;
+  margin-bottom: 21px;
+  width: 100%;
+  border-collapse: separate;
+  box-sizing: border-box;
+
+  .input-addon {
+    $color: rgba($black-gray-light, 0.6);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    text-align: center;
+    line-height: 0;
+    color: $input-addon-color;
+    font-size: $input-addon-size;
+
+    &:first-child {
+      left: 14px;
+    }
+
+    &:last-child {
+      right: 14px;
+    }
+  }
+
+  &.right-icon {
+    .input {
+      padding-right: 45px;
+    }
+  }
+
+  &.left-icon {
+    .input {
+      padding-left: 45px;
+    }
+  }
+
+  &.right-text {
+    .input {
+      padding-right: 35px;
+    }
+  }
+
+  &.left-text {
+    .input {
+      padding-left: 35px;
+    }
+  }
+}
+
+.input {
+  display: block;
+  transition: border-color 0.2s ease;
+  outline: 0;
+  border: solid 1px $input-border-color;
+  border-radius: 2px;
+  background-color: $input-bg-color;
+  padding: 13px 15px;
+  width: 100%;
+  color: $input-text-color;
+  font-size: $font-size;
+  box-sizing: border-box;
+
+  &:focus,
+  &:active,
+  &.active {
+    border-color: $input-border-focus;
+  }
+
+  &[type='number'] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+  }
+}
+
+.input-error-text {
+  position: relative;
+  top: -14px;
+  color: $input-error-color;
+  font-size: 12px;
+}
+
+.error {
+  .input {
+    border-color: $input-error-color;
+  }
+}
+
+input {
+  &::input-placeholder {
+    color: $input-placeholder;
+  }
+
+  &::placeholder {
+    color: $input-placeholder;
+  }
+}

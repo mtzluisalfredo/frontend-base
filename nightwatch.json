@@ -1,0 +1,93 @@
+{
+  "src_folders" : ["tests/e2e/cases"],
+  "page_objects_path" : ["tests/e2e/pages"],
+  "globals_path": "./tests/e2e/globals.js",
+  "custom_commands_path": "./tests/e2e/commands",
+  "selenium": {
+    "start_process" : false
+  },
+  "test_runner": {
+    "type" : "mocha",
+    "options" : {
+      "ui" : "bdd",
+      "reporter" : "list",
+      "compilers": "js:babel-core/register"
+    }
+  },
+  "test_settings" : {
+    "default" : {
+      "filter" : "**/*.test.js",
+      "launch_url" : "http://localhost:4000",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": true,
+      "end_session_on_fail": true,
+      "skip_testcases_on_fail" : true,
+      "log_screenshot_data": false,
+      "screenshots" : {
+        "enabled" : false
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "chromeOptions": {
+          "args": [
+            "window-size=1280,800",
+            "no-sandbox",
+            "use-fake-ui-for-media-stream",
+            "use-fake-device-for-media-stream"
+          ]
+        }
+      },
+      "use_xpath": false
+    },
+    "headless-desktop" : {
+      "filter" : "**/*.test.js",
+      "launch_url" : "http://web-app:4000",
+      "selenium_host": "selenium",
+      "silent": true,
+      "end_session_on_fail": true,
+      "skip_testcases_on_fail" : true,
+      "log_screenshot_data": false,
+      "screenshots" : {
+        "enabled" : true,
+        "on_failure" : true,
+        "on_error" : true,
+        "path" : "test_failure_screenshots"
+      },
+      "desiredCapabilities": {
+        "chromeOptions": {
+          "args": [
+            "window-size=1280,800",
+            "no-sandbox",
+            "use-fake-ui-for-media-stream",
+            "use-fake-device-for-media-stream"
+          ]
+        }
+      },
+      "use_xpath": false
+    },
+    "headless-tablet" : {
+      "filter" : "**/*.test.js",
+      "launch_url" : "http://web-app:4000",
+      "selenium_host": "selenium",
+      "silent": true,
+      "end_session_on_fail": true,
+      "skip_testcases_on_fail" : true,
+      "log_screenshot_data": false,
+      "screenshots" : {
+        "enabled" : true,
+        "on_failure" : true,
+        "on_error" : true,
+        "path" : "test_failure_screenshots"
+      },
+      "desiredCapabilities": {
+        "chromeOptions": {
+          "args": [
+            "window-size=768,1024"
+          ]
+        }
+      },
+      "use_xpath": false
+    }
+  }
+}

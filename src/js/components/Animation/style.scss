@@ -1,0 +1,19 @@
+$ani-time: 1s;
+
+:global(.fade-in-enter) {
+  transition: opacity $ani-time ease;
+  opacity: 0;
+}
+
+:global(.fade-in-enter.fade-in-enter-active) {
+  opacity: 1;
+}
+
+:global(.fade-in-leave) {
+  transition: opacity $ani-time ease;
+  opacity: 1;
+}
+
+:global(.fade-in-leave.fade-in-leave-active) {
+  opacity: 0;
+}

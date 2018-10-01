@@ -1,0 +1,67 @@
+.switch {
+  display: inline-block;
+  position: relative;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  .label {
+    display: inline-block;
+    height: $switch-button-size - 6;
+    vertical-align: middle;
+  }
+
+  .switch-bg {
+    display: inline-block;
+    position: relative;
+    margin: 0 0.5em;
+    border-radius: 14px;
+    background-color: $switch-bg-color;
+    cursor: pointer;
+    width: ($switch-button-size * 2) - 4;
+    height: $switch-button-size - 6;
+  }
+
+  .switch-button {
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    left: -1px;
+    transition: left .3s ease, background-color .2s ease;
+    border-radius: 50%;
+    background-color: $switch-button-color;
+    cursor: pointer;
+    width: $switch-button-size;
+    height: $switch-button-size;
+    vertical-align: middle;
+  }
+
+  &.active {
+    .switch-button {
+      left: $switch-button-size;
+      background-color: $switch-active-color;
+    }
+
+    .suffix {
+      color: $switch-active-color;
+    }
+  }
+
+  &.focus {
+    .switch-button {
+      border-color: rgba($switch-active-color, 0.7);
+      box-shadow: 0 0 4px 2px rgba($switch-active-color, 0.8);
+    }
+  }
+
+  &.disabled {
+    opacity: 0.6;
+  }
+
+  input {
+    opacity: 0;
+  }
+}

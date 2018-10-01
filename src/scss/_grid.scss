@@ -1,0 +1,77 @@
+/*
+  file grid.scss
+*/
+
+:global(.clearfix) {
+  display: block;
+  min-height: 1%;
+
+  &::after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    content: ' ';
+  }
+}
+
+:global(.container) {
+  @include container;
+}
+
+:global(.row) {
+  display: block;
+  min-height: 1%;
+
+  &::after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    content: ' ';
+  }
+  // @include gutters;
+  @include break;
+  width: 100%;
+}
+
+@for $i from 1 through $columns {
+  :global(.col-#{$i}) {
+    @include span($i);
+    min-height: 1px;
+  }
+}
+
+[class*='col-'] {
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@for $i from 1 through $columns {
+  .offset-#{$i} {
+    margin-left: span($i);
+  }
+}
+
+:global(.no-gutter) {
+  padding: 0;
+}
+
+@media screen and (max-width: $screen-xl) {
+  :global(.container) {
+    max-width: 96%;
+
+    :global(.container) {
+      @include container;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-xs) {
+  [class*='col-'] {
+    width: 100%;
+  }
+}
