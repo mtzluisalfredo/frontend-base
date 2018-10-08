@@ -1,42 +1,5 @@
 const defaultState = {
-  mails: [
-    {
-      id: 0,
-      from: 'mhallatt0@walmart.com',
-      to: 'cziem0@surveymonkey.com',
-      subject: 'Office Assistant IV',
-      body: 'condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tinc',
-      date: '3/31/2017',
-      isReaded: false,
-      avatar: 'https://robohash.org/dignissimosetsuscipit.jpg?size=50x50&set=set1',
-      tag: 'Indigo',
-      folder: 'inbox',
-      attachements: [
-        {
-          file: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff',
-          name: 'ut_nulla_sed.jpeg',
-        },
-      ],
-    },
-    {
-      id: 1,
-      from: 'nmulbery1@seattletimes.com',
-      to: 'idimont1@usa.gov',
-      subject: 'Technical Writer',
-      body: 'sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accu',
-      date: '11/17/2016',
-      isReaded: false,
-      avatar: 'https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1',
-      tag: 'Teal',
-      folder: 'inbox',
-      attachements: [
-        {
-          file: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
-          name: 'sodales_scelerisque_mauris.jpeg',
-        },
-      ],
-    },
-  ],
+  mails: [],
   selectedEmailID: null,
   hasErrored: false,
   currentSection: 'inbox',
@@ -45,10 +8,11 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   const { type, emails, id, folder, hasErrored, searchText } = action;
+  console.log('TCL: emails', emails);
   switch (type) {
     case 'FETCH_DATA_SUCCESS': {
       const newMails = emails.map(mail => { return { ...mail, folder: 'inbox' }; });
-      const mails = state.mails.concat(newMails).map((mail, mailID) => { return { ...mail, mailID }; });
+      const mails = state.mails.concat(newMails).map((mail, mailID) => { return { ...mail, id: mailID }; });
       return {
         ...state,
         mails,

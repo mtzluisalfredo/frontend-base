@@ -1,7 +1,9 @@
+import mails from '../../../mail-data.json';
+
 export const mailsFetchDataSuccess = items => {
   return {
     type: 'FETCH_DATA_SUCCESS',
-    mails: items,
+    emails: items,
   };
 };
 
@@ -66,9 +68,6 @@ export const markUnread = id => {
 
 export default function fetchData() {
   return dispatch => {
-    fetch('./mail-data.json')
-      .then(response => response.json())
-      .then(mails => dispatch(mailsFetchDataSuccess(mails)))
-      .catch(() => dispatch(mailsHasErrored(true)));
+    dispatch(mailsFetchDataSuccess(mails));
   };
 }
