@@ -43,6 +43,31 @@
     }
   }
 
+  .dropdown {
+    display: flex;
+    align-items: center;
+    width: 40%;
+
+    .section {
+      margin: 0;
+      padding: 0;
+
+      button {
+        min-width: 50px;
+
+        span {
+          display: flex;
+          align-items: center;
+          text-transform: capitalize;
+        }
+      }
+
+      > * {
+        margin: 0;
+      }
+    }
+  }
+
   .section {
     padding-right: 25px;
     text-transform: capitalize;

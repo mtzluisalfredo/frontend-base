@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Badge } from '@/components';
+import { Badge, Dropdown } from '@/components';
 
 import { mailbox } from '@/store/actions';
 
@@ -29,6 +29,29 @@ class SidebarHeader extends Component {
     unreadCount: PropTypes.number,
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      options: [
+        {
+          id: 0,
+          label: 'inbox',
+          value: 'inbox',
+        },
+        {
+          id: 1,
+          label: 'spam',
+          value: 'spam',
+        },
+        {
+          id: 2,
+          label: 'deleted',
+          value: 'deleted',
+        },
+      ],
+    }
+  }
+
   render() {
     const { currentSection, unreadCount, selectFolder } = this.props;
 
@@ -43,15 +66,18 @@ class SidebarHeader extends Component {
             <Badge color="error" value={unreadCount} />
           }
         </div>
-        <div>
-          <select
-            value={currentSection}
-            onChange={event => selectFolder(event.target.value)}
-          >
-            <option value="inbox">Inbox</option>
-            <option value="spam">Spam</option>
-            <option value="deleted">Deleted</option>
-          </select>
+        <div styleName="dropdown">
+          <Dropdown
+            id="dropdown"
+            name="section-dropdown"
+            options={this.state.options}
+            color={false}
+            defaultOptionText="Sección"
+            selectedOption={{ label: currentSection } || {}}
+            styleName="section"
+            onChange={e => selectFolder(e.value)}
+            showActiveItem
+          />
         </div>
       </div>
     );
