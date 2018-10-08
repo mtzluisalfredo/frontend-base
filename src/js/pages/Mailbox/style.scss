@@ -37,6 +37,10 @@
 
   .left {
     display: flex;
+
+    .badge {
+      background-color: $blue;
+    }
   }
 
   .section {

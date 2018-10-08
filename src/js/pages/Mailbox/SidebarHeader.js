@@ -40,7 +40,7 @@ class SidebarHeader extends Component {
           </h2>
           {
             unreadCount > 0 && currentSection === 'inbox' &&
-            <Badge styleName="badge" value={unreadCount} />
+            <Badge color="error" value={unreadCount} />
           }
         </div>
         <div>
