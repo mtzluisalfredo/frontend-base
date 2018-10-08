@@ -12,10 +12,12 @@ import {
   ResetPasswordPage,
   ValidateAccountPage,
 } from './pages/UserAccess';
+import Mailbox from './pages/Mailbox';
 
 const routes = params => (
   <ConnectedRouter history={params.history}>
     <Switch>
+      <Route exact path="/mailbox" component={Mailbox} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/logout" component={LogoutPage} />
       <Route exact path="/sign-up" component={SignUpPage} />
