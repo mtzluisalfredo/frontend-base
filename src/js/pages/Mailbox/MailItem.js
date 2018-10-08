@@ -10,11 +10,10 @@ function MailItem(props) {
   const { isReaded } = mail;
   return (
     <li
-      styleName={
-        'item' +
-        (selected ? ' selected' : '') +
-        (!isReaded ? ' not-readed' : '')
-      }
+      styleName={classNames('item', {
+        selected,
+        'not-readed': !isReaded,
+      })}
       onClick={() => openMail(mail.id)}
     >
       <div>
@@ -25,7 +24,7 @@ function MailItem(props) {
       </div>
       <div>
         <p styleName="subject">{mail.subject}</p>
-        {mail.attachements ? <p>Attachment</p> : false}
+        {mail.attachements && <p>Attachment</p>}
       </div>
     </li>
   );
