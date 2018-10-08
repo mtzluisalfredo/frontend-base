@@ -36,7 +36,7 @@ class SidebarHeader extends Component {
       <div styleName="sidebar-header">
         <div styleName="left">
           <h2 styleName="section">
-            { `${currentSection}` }
+            { currentSection }
           </h2>
           {
             unreadCount > 0 && currentSection === 'inbox' &&
