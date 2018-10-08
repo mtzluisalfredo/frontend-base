@@ -7,7 +7,6 @@ import { Badge } from '@/components';
 import { mailbox } from '@/store/actions';
 
 import './style.scss';
-import capitalizeFirstLetter from '../../lib/capitalizeFirstLetter';
 
 function countUnread(mails) {
   const unread = mails.filter(mail => mail.folder === 'inbox' && !mail.isReaded);
@@ -37,12 +36,11 @@ class SidebarHeader extends Component {
       <div styleName="sidebar-header">
         <div styleName="left">
           <h2 styleName="section">
-            { capitalizeFirstLetter(currentSection) }
-            &nbsp;
+            { `${currentSection}` }
           </h2>
           {
             unreadCount > 0 && currentSection === 'inbox' &&
-            <Badge color="primary" styleName="badge" value={unreadCount} />
+            <Badge styleName="badge" value={unreadCount} />
           }
         </div>
         <div>
