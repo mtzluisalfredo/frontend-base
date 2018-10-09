@@ -38,7 +38,6 @@ class Mailbox extends Component {
   }
 
   componentWillUnmount() {
-    console.log(this.props.intervalID);
     clearInterval(this.props.intervalID);
   }
 
