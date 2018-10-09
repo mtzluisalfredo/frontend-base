@@ -5,6 +5,8 @@ import { Helmet } from '@/components';
 
 import { PropTypes } from 'prop-types';
 
+import { mailbox } from '@/store/actions';
+
 import fetchData from '@/store/actions/mailbox';
 
 import MailDetail from './MailDetail';
@@ -19,30 +21,25 @@ const mapStateToProps = state => {
   return { mails };
 };
 
-@connect(mapStateToProps, { fetchData })
+@connect(mapStateToProps, { ...mailbox, fetchData })
 class Mailbox extends Component {
   static propTypes = {
     fetchData: PropTypes.func,
+    intervalID: PropTypes.number,
+    setIntervalID: PropTypes.func,
   };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      intervalId: null,
-    };
-  }
 
   componentDidMount() {
     this.props.fetchData();
-    const intervalId = setInterval(() => {
+    const intervalID = setInterval(() => {
       this.props.fetchData();
     }, 90000);
-    this.setState({ intervalId });
+    this.props.setIntervalID(intervalID);
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.intervalId);
+    console.log(this.props.intervalID);
+    clearInterval(this.props.intervalID);
   }
 
   render() {

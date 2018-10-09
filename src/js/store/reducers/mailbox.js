@@ -4,11 +4,11 @@ const defaultState = {
   hasErrored: false,
   currentSection: 'inbox',
   searchText: '',
+  intervalID: null,
 };
 
 export default (state = defaultState, action) => {
-  const { type, emails, id, folder, hasErrored, searchText } = action;
-  console.log('TCL: emails', emails);
+  const { type, emails, id, folder, hasErrored, searchText, intervalID } = action;
   switch (type) {
     case 'FETCH_DATA_SUCCESS': {
       const newMails = emails.map(mail => { return { ...mail, folder: 'inbox' }; });
@@ -80,6 +80,11 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         searchText,
+      };
+    case 'SET_INTERVAL_ID':
+      return {
+        ...state,
+        intervalID,
       };
     default:
       return state;

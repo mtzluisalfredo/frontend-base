@@ -66,6 +66,13 @@ export const markUnread = id => {
   };
 };
 
+export const setIntervalID = id => {
+  return {
+    type: 'SET_INTERVAL_ID',
+    intervalID: id,
+  };
+};
+
 export default function fetchData() {
   return dispatch => {
     dispatch(mailsFetchDataSuccess(mails));
